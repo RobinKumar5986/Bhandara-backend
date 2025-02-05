@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -44,4 +48,13 @@ public class UserInfo {
 
     @Column(name = "country")
     private String country;
+
+    @CreationTimestamp
+    @Column(name = "created_on")
+    private Date createdOn;
+
+    @UpdateTimestamp
+    @Column(name = "updated_on")
+    private Date updatedOn;
+
 }

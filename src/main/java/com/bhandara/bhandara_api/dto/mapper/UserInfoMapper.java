@@ -17,7 +17,9 @@ public class UserInfoMapper {
                 userInfo.getLongitude(),
                 userInfo.getCity(),
                 userInfo.getState(),
-                userInfo.getCountry()
+                userInfo.getCountry(),
+                userInfo.getCreatedOn(),
+                userInfo.getUpdatedOn()
         );
     }
 
@@ -33,7 +35,9 @@ public class UserInfoMapper {
                 userInfoDto.getLongitude(),
                 userInfoDto.getCity(),
                 userInfoDto.getState(),
-                userInfoDto.getCountry()
+                userInfoDto.getCountry(),
+                userInfoDto.getCreatedOn(),
+                userInfoDto.getUpdatedOn()
         );
     }
 }

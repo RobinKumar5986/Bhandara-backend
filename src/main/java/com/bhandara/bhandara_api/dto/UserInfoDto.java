@@ -1,9 +1,12 @@
 package com.bhandara.bhandara_api.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -33,4 +36,12 @@ public class UserInfoDto {
 
     @JsonProperty("country")
     private String country;
+
+    @JsonProperty("createdOn")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
+    private Date createdOn;
+
+    @JsonProperty("updatedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
+    private Date updatedOn;
 }
