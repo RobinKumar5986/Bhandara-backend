@@ -38,19 +38,19 @@ public class BhandaraDto {
     private Date updatedOn;
 
     @JsonProperty("dateOfBhandara")
-    private Date dateOfBhandara;
+    private String dateOfBhandara;
 
     @JsonProperty("startingTime")
-    private LocalDateTime startingTime;
+    private String startingTime;
 
     @JsonProperty("endingTime")
-    private LocalDateTime endingTime;
+    private String endingTime;
 
     @JsonProperty("verificationType")
     private String verificationType;
 
     @JsonProperty("foodType")
-    private String foodType; // Veg || Non-Veg TODO: later I may need to create enum type for this...
+    private String foodType; // Veg || Non-Veg
 
     @JsonProperty("organizationType")
     private String organizationType; // Individual or Organization
@@ -75,4 +75,7 @@ public class BhandaraDto {
 
     @JsonProperty("image")
     private String image;
+
+    @JsonProperty("bhandaraType")
+    private String bhandaraType;
 }

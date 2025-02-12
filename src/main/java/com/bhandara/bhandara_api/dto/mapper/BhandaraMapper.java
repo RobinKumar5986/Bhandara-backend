@@ -33,7 +33,8 @@ public class BhandaraMapper {
                 entity.getContactForVolunteer(),
                 entity.getSpecialNote(),
                 entity.getCreatedBy(),
-                entity.getImage()
+                entity.getImage(),
+                entity.getBhandaraType()
         );
     }
 
@@ -42,29 +43,33 @@ public class BhandaraMapper {
         if (dto == null) {
             return null;
         }
-        return new BhandaraInfo(
-                dto.getId(),
-                dto.getName(),
-                dto.getDescription(),
-                dto.getLatitude(),
-                dto.getLongitude(),
-                dto.getCreatedOn(),
-                dto.getUpdatedOn(),
-                dto.getDateOfBhandara(),
-                dto.getStartingTime(),
-                dto.getEndingTime(),
-                dto.getVerificationType(),
-                dto.getFoodType(),
-                dto.getOrganizationType(),
-                dto.getOrganizationName(),
-                dto.getPhoneNumber(),
-                dto.getNeedVolunteer(),
-                dto.getContactForVolunteer(),
-                dto.getSpecialNote(),
-                dto.getCreatedBy(),
-                dto.getImage()
-        );
+
+        BhandaraInfo bhandaraInfo = new BhandaraInfo();
+        bhandaraInfo.setId(dto.getId());
+        bhandaraInfo.setName(dto.getName());
+        bhandaraInfo.setDescription(dto.getDescription());
+        bhandaraInfo.setLatitude(dto.getLatitude());
+        bhandaraInfo.setLongitude(dto.getLongitude());
+        bhandaraInfo.setCreatedOn(dto.getCreatedOn());
+        bhandaraInfo.setUpdatedOn(dto.getUpdatedOn());
+        bhandaraInfo.setDateOfBhandara(dto.getDateOfBhandara());
+        bhandaraInfo.setStartingTime(dto.getStartingTime());
+        bhandaraInfo.setEndingTime(dto.getEndingTime());
+        bhandaraInfo.setVerificationType(dto.getVerificationType());
+        bhandaraInfo.setFoodType(dto.getFoodType());
+        bhandaraInfo.setOrganizationType(dto.getOrganizationType());
+        bhandaraInfo.setOrganizationName(dto.getOrganizationName());
+        bhandaraInfo.setPhoneNumber(dto.getPhoneNumber());
+        bhandaraInfo.setNeedVolunteer(dto.getNeedVolunteer());
+        bhandaraInfo.setContactForVolunteer(dto.getContactForVolunteer());
+        bhandaraInfo.setSpecialNote(dto.getSpecialNote());
+        bhandaraInfo.setCreatedBy(dto.getCreatedBy());
+        bhandaraInfo.setImage(dto.getImage());
+        bhandaraInfo.setBhandaraType(dto.getBhandaraType());
+
+        return bhandaraInfo;
     }
+
 
     // Convert List of Bhandara Entities to List of BhandaraDTOs
     public static List<BhandaraDto> BhandaraToBhandaraDTOList(List<BhandaraInfo> entities) {

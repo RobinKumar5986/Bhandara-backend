@@ -15,15 +15,15 @@ public class BhandataServiceImpl implements BhandaraService {
     private final BhandaraRepository bhandaraRepository;
 
     @Override
-    public BhandaraDto addBhandara(BhandaraDto bhandaraDTO) {
+    public String addBhandara(BhandaraDto bhandaraDTO) {
         BhandaraInfo bhandaraInfo = BhandaraMapper.BhandaraDTOToBhandaraInfo(bhandaraDTO);
-        return BhandaraMapper.BhandaraInfoToBhandaraDTO(bhandaraRepository.save(bhandaraInfo));
+        return "Success";
     }
 
     @Override
     public BhandaraDto getBhandaraById(Long id) {
         BhandaraInfo bhandaraInfo = bhandaraRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with the id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Bhandara not found with the id: " + id));
         return BhandaraMapper.BhandaraInfoToBhandaraDTO(bhandaraInfo);
     }
 }

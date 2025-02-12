@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BhandaraImpl implements Bhandara {
     private final BhandaraService bhandaraService;
     @Override
-    public RestResponse<BhandaraDto> addBhandara(@RequestBody BhandaraDto bhandaraDTO) {
+    public RestResponse<String> addBhandara(@RequestBody BhandaraDto bhandaraDTO) {
         return RestResponse.ok(bhandaraService.addBhandara(bhandaraDTO));
     }
 

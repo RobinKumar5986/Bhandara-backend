@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface Bhandara {
     @Operation(summary = "Create new bhandara", description = "Adds a new bhandara to the system")
     @PostMapping("/add")
-    RestResponse<BhandaraDto> addBhandara(@RequestBody BhandaraDto bhandaraDTO);
+    RestResponse<String> addBhandara(@RequestBody BhandaraDto bhandaraDTO);
 
     @Operation(summary = "Create new bhandara", description = "Adds a new bhandara to the system")
     @PostMapping("/get/{id}")

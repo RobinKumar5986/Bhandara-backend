@@ -9,35 +9,39 @@ public class UserInfoMapper {
         if (userInfo == null) {
             return null;
         }
-        return new UserInfoDto(
-                userInfo.getId(),
-                userInfo.getPhoneNo(),
-                userInfo.getUserUid(),
-                userInfo.getLatitude(),
-                userInfo.getLongitude(),
-                userInfo.getCity(),
-                userInfo.getState(),
-                userInfo.getCountry(),
-                userInfo.getCreatedOn(),
-                userInfo.getUpdatedOn()
-        );
+
+        UserInfoDto userInfoDto = new UserInfoDto();
+        userInfoDto.setId(userInfo.getId());
+        userInfoDto.setPhoneNo(userInfo.getPhoneNo());
+        userInfoDto.setUserUid(userInfo.getUserUid());
+        userInfoDto.setLatitude(userInfo.getLatitude());
+        userInfoDto.setLongitude(userInfo.getLongitude());
+        userInfoDto.setCity(userInfo.getCity());
+        userInfoDto.setState(userInfo.getState());
+        userInfoDto.setCountry(userInfo.getCountry());
+        userInfoDto.setCreatedOn(userInfo.getCreatedOn());
+        userInfoDto.setUpdatedOn(userInfo.getUpdatedOn());
+
+        return userInfoDto;
     }
 
     public static UserInfo userInfoDtoToUserInfo(UserInfoDto userInfoDto) {
         if (userInfoDto == null) {
             return null;
         }
-        return new UserInfo(
-                userInfoDto.getId(),
-                userInfoDto.getPhoneNo(),
-                userInfoDto.getUserUid(),
-                userInfoDto.getLatitude(),
-                userInfoDto.getLongitude(),
-                userInfoDto.getCity(),
-                userInfoDto.getState(),
-                userInfoDto.getCountry(),
-                userInfoDto.getCreatedOn(),
-                userInfoDto.getUpdatedOn()
-        );
+
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId(userInfoDto.getId());
+        userInfo.setPhoneNo(userInfoDto.getPhoneNo());
+        userInfo.setUserUid(userInfoDto.getUserUid());
+        userInfo.setLatitude(userInfoDto.getLatitude());
+        userInfo.setLongitude(userInfoDto.getLongitude());
+        userInfo.setCity(userInfoDto.getCity());
+        userInfo.setState(userInfoDto.getState());
+        userInfo.setCountry(userInfoDto.getCountry());
+        userInfo.setCreatedOn(userInfoDto.getCreatedOn());
+        userInfo.setUpdatedOn(userInfoDto.getUpdatedOn());
+
+        return userInfo;
     }
 }

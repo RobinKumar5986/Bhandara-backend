@@ -2,6 +2,9 @@ package com.bhandara.bhandara_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -17,10 +20,10 @@ public class BhandaraInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "name")
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description" ,columnDefinition = "TEXT")
     private String description;
 
     @Column(nullable = false)
@@ -29,50 +32,55 @@ public class BhandaraInfo {
     @Column(nullable = false)
     private Double longitude;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
+    @Column(name = "created_on")
     private Date createdOn;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
+    @Column(name = "updated_on")
     private Date updatedOn;
 
-    @Temporal(TemporalType.DATE)
-    @Column(nullable = false)
-    private Date dateOfBhandara;
+    @Column(name = "date_of_bhandara")
+    private String dateOfBhandara;
 
-    @Column(nullable = false)
-    private LocalDateTime startingTime;
+    @Column(name = "start_time")
+    private String startingTime;
 
-    @Column(nullable = false)
-    private LocalDateTime endingTime;
+    @Column(name = "end_time")
+    private String endingTime;
 
-    @Column(length = 50)
+    @Column(name = "verification_type")
     private String verificationType;
 
-    @Column(nullable = false, length = 10)
+    @Column(name = "food_type")
     private String foodType; // Veg or Non-Veg
 
-    @Column(nullable = false, length = 20)
+    @Column(name =  "organization_type")
     private String organizationType; // Individual or Organization
 
-    @Column(length = 255, nullable = true)
+    @Column(name = "organization_name")
     private String organizationName; // Can be null
 
-    @Column(nullable = false, length = 15, unique = true)
+    @Column(name = "phone_no")
     private String phoneNumber;
 
+    @Column(name = "need_volunteer")
     private Boolean needVolunteer;
 
+    @Column(name = "contact_for_volunteer")
     private String contactForVolunteer;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "special_note", columnDefinition = "TEXT")
     private String specialNote;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false,columnDefinition = "LONGTEXT")
     private String createdBy; // userId
 
     @Column(columnDefinition = "LONGTEXT")
     private String image;
+
+    @Column(name = "bhandaraType")
+    private String bhandaraType; //tells about if it is a everyday or single day bhandara
 }
 
 

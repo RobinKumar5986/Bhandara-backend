@@ -8,6 +8,8 @@ import com.bhandara.bhandara_api.service.UserServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserServices {
@@ -16,7 +18,17 @@ public class UserServiceImpl implements UserServices {
 
     @Override
     public UserInfoDto addUser(UserInfoDto userInfoDto) {
-        UserInfo userInfo = UserInfoMapper.userInfoDtoToUserInfo(userInfoDto);
+        String phoneNo = userInfoDto.getPhoneNo();
+        Optional<UserInfo> existingUserOptional = userInfoRepository.findByPhoneNoCustom(phoneNo);
+
+        UserInfo userInfo;
+        if (existingUserOptional.isPresent()) {
+            UserInfo existingUser = existingUserOptional.get();
+            userInfoDto.setId(existingUser.getId());
+            userInfoDto.setCreatedOn(existingUser.getCreatedOn());
+        }
+
+        userInfo = UserInfoMapper.userInfoDtoToUserInfo(userInfoDto);
         return UserInfoMapper.userInfoToUserDto(userInfoRepository.save(userInfo));
     }
 }
