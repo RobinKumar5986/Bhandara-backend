@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class BhandaraImpl implements Bhandara {
@@ -18,7 +20,18 @@ public class BhandaraImpl implements Bhandara {
     }
 
     @Override
+    public RestResponse<List<BhandaraDto>> getAllUpcoming() {
+        return RestResponse.ok(bhandaraService.getAllUpcoming());
+    }
+
+
+    @Override
     public RestResponse<BhandaraDto> getBhandaraById(Long id) {
         return RestResponse.ok(bhandaraService.getBhandaraById(id));
+    }
+
+    @Override
+    public RestResponse<String> deleteAll() {
+        return RestResponse.ok(bhandaraService.deleteAll());
     }
 }

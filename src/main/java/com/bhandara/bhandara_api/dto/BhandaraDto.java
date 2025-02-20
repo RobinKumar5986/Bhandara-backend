@@ -38,13 +38,13 @@ public class BhandaraDto {
     private Date updatedOn;
 
     @JsonProperty("dateOfBhandara")
-    private String dateOfBhandara;
+    private Long dateOfBhandara;
 
     @JsonProperty("startingTime")
-    private String startingTime;
+    private Double startingTime;
 
     @JsonProperty("endingTime")
-    private String endingTime;
+    private Double endingTime;
 
     @JsonProperty("verificationType")
     private String verificationType;

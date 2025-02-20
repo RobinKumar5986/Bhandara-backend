@@ -1,11 +1,13 @@
 package com.bhandara.bhandara_api.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -41,13 +43,13 @@ public class BhandaraInfo {
     private Date updatedOn;
 
     @Column(name = "date_of_bhandara")
-    private String dateOfBhandara;
+    private Long dateOfBhandara;
 
     @Column(name = "start_time")
-    private String startingTime;
+    private Double startingTime;
 
     @Column(name = "end_time")
-    private String endingTime;
+    private Double endingTime;
 
     @Column(name = "verification_type")
     private String verificationType;
