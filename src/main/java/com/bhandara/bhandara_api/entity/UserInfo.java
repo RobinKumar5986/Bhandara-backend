@@ -9,14 +9,16 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
-
+/***
+ * @Note: In PostgreSQL user is a Keyword.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(
-        name = "user",
+        name = "users", //
         uniqueConstraints = @UniqueConstraint(
                 name = "unique_row",
                 columnNames = {"phone_no", "user_uid", "latitude", "longitude", "city", "state", "country"}

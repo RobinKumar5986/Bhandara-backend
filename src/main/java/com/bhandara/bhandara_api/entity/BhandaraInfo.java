@@ -75,14 +75,14 @@ public class BhandaraInfo {
     @Column(name = "special_note", columnDefinition = "TEXT")
     private String specialNote;
 
-    @Column(nullable = false,columnDefinition = "LONGTEXT")
+    @Column(nullable = false,columnDefinition = "TEXT")
     private String createdBy; // userId
 
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String image;
 
     @Column(name = "bhandaraType")
-    private String bhandaraType; //tells about if it is a everyday or single day bhandara
+    private String bhandaraType; //tells about if it's everyday or single day bhandara
 }
 
 
