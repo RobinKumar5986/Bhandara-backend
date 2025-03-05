@@ -47,6 +47,14 @@
 			<version>42.6.0</version>
 		</dependency>
 
+		<!-- MySql Dependency @Note using the normal one can cause some issues -->
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>8.0.12</version>-->
+<!--		</dependency>-->
+
+
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
